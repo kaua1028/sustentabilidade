@@ -1,0 +1,338 @@
+/* ========== style.css ========== */
+/* CORES DA PALETA (verde amarelado, verde amarelado claro, verde apagado, verde amarelado escuro) */
+:root {
+    --verde-amarelado: #b8d97a;        /* verde amarelado médio */
+    --verde-amarelado-claro: #e3ffb2;  /* verde amarelado claro */
+    --verde-apagado: #6a8e5a;           /* verde apagado */
+    --verde-escuro: #3d6b3d;            /* verde amarelado escuro */
+    --fundo-claro: #f9ffe8;              /* fundo quase branco com tom de verde */
+    --texto-escuro: #2c4a2e;             /* verde escuro para textos */
+    --branco: #ffffff;
+}
+
+/* ===== RESET E ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo-claro);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    background-color: var(--verde-escuro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu-lista a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Efeito hover no menu */
+.menu-lista a:hover {
+    background-color: var(--verde-amarelado-claro);
+    color: var(--verde-escuro);
+    transform: translateY(-2px);
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: 80px 0;
+    border-bottom: 2px solid var(--verde-amarelado);
+}
+
+/* Títulos */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--verde-escuro);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Linha decorativa embaixo dos títulos */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--verde-amarelado);
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--verde-apagado);
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 1.8rem;
+    color: var(--verde-apagado);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* ===== CARDS ===== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 2px solid var(--verde-amarelado-claro);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de levantar quando passa o mouse */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: var(--verde-amarelado);
+}
+
+/* Cards específicos */
+.tripé-card {
+    background-color: var(--verde-amarelado-claro);
+    border-left: 5px solid var(--verde-escuro);
+}
+
+.desafio-card {
+    background-color: #fff4e0;
+    border: 2px solid #ffb347;
+}
+
+/* ===== CONTEÚDO DUPLO (para seções com 2 cards) ===== */
+.conteudo-duplo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.destaque {
+    background-color: var(--verde-amarelado-claro);
+    border: 3px solid var(--verde-escuro);
+}
+
+/* ===== LISTA DE FONTES ===== */
+.lista-fontes {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.lista-fontes li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* Marcador personalizado com símbolo de livro */
+.lista-fontes li::before {
+    content: '📚';
+    position: absolute;
+    left: 0;
+    color: var(--verde-escuro);
+}
+
+/* ===== CITAÇÃO ===== */
+.citacao {
+    background-color: var(--verde-amarelado-claro);
+    padding: 40px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    margin: 30px 0;
+    border: 3px dashed var(--verde-escuro);
+}
+
+.chamada {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--verde-escuro);
+    margin-top: 30px;
+}
+
+.alerta {
+    background-color: #ffeb99;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #ffaa00;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* ===== ÁREA INTERATIVA ===== */
+.caixa-interativa {
+    background-color: var(--verde-amarelado-claro);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    border: 3px solid var(--verde-escuro);
+    transition: background-color 0.5s ease;
+}
+
+.botao-interativo {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 0 #1f421f;
+}
+
+.botao-interativo:hover {
+    background-color: var(--verde-apagado);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #1f421f;
+}
+
+.botao-interativo:active {
+    transform: translateY(5px);
+    box-shadow: 0 2px 0 #1f421f;
+}
+
+.mensagem-interativa {
+    font-size: 1.5rem;
+    font-weight: 600;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-escuro);
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Tablet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .conteudo-duplo {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-lista {
+        gap: 10px;
+    }
+    
+    .menu-lista a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .citacao {
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .menu-lista {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .botao-interativo {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
